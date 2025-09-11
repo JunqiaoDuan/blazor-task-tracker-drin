@@ -77,13 +77,33 @@ namespace TaskTrackerPro.Web.Components
             await loadTaskItemsAsync();
         }
 
+        private async Task onSearchClicked()
+        {
+            await loadTaskItemsAsync();
+        }
+
+        private async Task onClearClicked()
+        {
+            _taskItemViewModel.TitleFilter = string.Empty;
+            _taskItemViewModel.DescriptionFilter = string.Empty;
+            _taskItemViewModel.StatusFilter = null;
+            _taskItemViewModel.PriorityFilter = null;
+
+            await loadTaskItemsAsync();
+        }
+
         #endregion
 
         #region Private Methods
 
         private async Task loadTaskItemsAsync()
         {
-            var allTasks = await _taskService.GetAllAsync();
+            var allTasks = await _taskService.GetAllFilterredAsync(
+                _taskItemViewModel.TitleFilter,
+                _taskItemViewModel.DescriptionFilter,
+                _taskItemViewModel.StatusFilter,
+                _taskItemViewModel.PriorityFilter);
+
             allTasks = allTasks
                 .OrderByDescending(i => i.TaskItemPriority)
                 .ThenByDescending(i => i.CreationDate)

@@ -7,6 +7,11 @@ namespace TaskTrackerPro.Web.ViewModels
     {
         #region Filter
 
+        public string? TitleFilter { get; set; }
+        public string? DescriptionFilter { get; set; }
+        public TaskItemStatus? StatusFilter { get; set; }
+        public TaskItemPriority? PriorityFilter { get; set; }
+
         #endregion
 
         #region Grid

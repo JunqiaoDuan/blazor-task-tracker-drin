@@ -9,7 +9,7 @@ namespace TaskTrackerPro.Service.Interfaces
 {
     public interface ITaskService
     {
-        Task<List<TaskItem>> GetAllAsync();
+        Task<List<TaskItem>> GetAllFilterredAsync(string? title, string? description, TaskItemStatus? taskStatus, TaskItemPriority? taskPriority);
         Task<TaskItem?> GetByIdAsync(Guid id);
         Task AddAsync(TaskItem task);
         Task UpdateAsync(TaskItem task);

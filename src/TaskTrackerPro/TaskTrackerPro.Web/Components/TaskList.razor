@@ -4,9 +4,39 @@
 
 @inject ITaskService _taskService
 
-<button class="btn btn-primary mb-3" @onclick="openAddModal">
-    Add Task
-</button>
+<div class="mb-3 d-flex flex-row align-items-center">
+    <button class="btn btn-primary" @onclick="openAddModal">
+        Add Task
+    </button>
+</div>
+<div class="mb-3 d-flex flex-row align-items-center justify-content-between">
+    <div class="d-flex flex-row gap-2 align-items-center">
+        <InputText class="form-control" @bind-Value="_taskItemViewModel.TitleFilter" placeholder="Title" />
+        <InputText class="form-control" @bind-Value="_taskItemViewModel.DescriptionFilter" placeholder="Description" />
+        <InputSelect class="form-select" @bind-Value="_taskItemViewModel.StatusFilter">
+            <option value="">All</option>
+            @foreach (var status in Enum.GetValues<TaskItemStatus>())
+            {
+                <option value="@status">@status</option>
+            }
+        </InputSelect>
+        <InputSelect class="form-select" @bind-Value="_taskItemViewModel.PriorityFilter">
+            <option value="">All</option>
+            @foreach (var priority in Enum.GetValues<TaskItemPriority>())
+            {
+                <option value="@priority">@priority</option>
+            }
+        </InputSelect>
+    </div>
+    <div class="d-flex flex-row gap-2">
+        <button class="btn btn-outline-primary" @onclick="onSearchClicked">
+            Search
+        </button>
+        <button class="btn btn-outline-secondary" @onclick="onClearClicked">
+            Clear
+        </button>
+    </div>
+</div>
 
 @if (_isLoading)
 {

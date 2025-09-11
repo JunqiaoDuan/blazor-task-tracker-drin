@@ -29,9 +29,9 @@ namespace TaskTrackerPro.Service.Services
 
         #region Public methods
 
-        public async Task<List<TaskItem>> GetAllAsync()
+        public async Task<List<TaskItem>> GetAllFilterredAsync(string? title, string? description, TaskItemStatus? taskStatus, TaskItemPriority? taskPriority)
         {
-            var spec = new TaskItemListSpec();
+            var spec = new TaskItemListSpec(title, description, taskStatus, taskPriority);
             return await _taskItemRepository.ListAsync(spec);
         }
 
