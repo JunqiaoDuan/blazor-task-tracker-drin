@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="NewId" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TaskTrackerPro.Service.Shared\TaskTrackerPro.Service.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

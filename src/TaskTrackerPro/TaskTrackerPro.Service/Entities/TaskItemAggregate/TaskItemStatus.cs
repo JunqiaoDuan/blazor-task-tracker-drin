@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace TaskTrackerPro.Service.Entities.TaskItemAggregate
 {
-    public enum TaskPriority
+    public enum TaskItemStatus
     {
-        Low = 10,
-        Medium = 20,
-        High = 30
+        Pending = 10,
+        Completed = 20,
     }
 }

@@ -10,4 +10,8 @@
     <PackageReference Include="Ardalis.Specification" Version="9.3.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Dtos\" />
+  </ItemGroup>
+
 </Project>

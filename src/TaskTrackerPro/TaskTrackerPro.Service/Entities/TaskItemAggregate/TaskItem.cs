@@ -4,14 +4,13 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TaskTrackerPro.Service.Entities.Common;
+using TaskTrackerPro.Service.Shared.Repository;
 
 namespace TaskTrackerPro.Service.Entities.TaskItemAggregate
 {
-    public class TaskItem
+    public class TaskItem : BaseEntity, IAggregateRoot
     {
-        [Key]
-        public Guid Id { get; set; }
-
         [Required]
         [MaxLength(100)]
         public string Title { get; set; }
@@ -20,12 +19,10 @@ namespace TaskTrackerPro.Service.Entities.TaskItemAggregate
         public string Description { get; set; }
 
         [Required]
-        public TaskStatus Status { get; set; } = TaskStatus.Pending;
+        public TaskItemStatus TaskItemStatus { get; set; } = TaskItemStatus.Pending;
 
         [Required]
-        public TaskPriority Priority { get; set; } = TaskPriority.Medium;
+        public TaskItemPriority TaskItemPriority { get; set; } = TaskItemPriority.Medium;
 
-        [Required]
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }
