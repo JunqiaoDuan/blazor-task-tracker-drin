@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskTrackerPro.Web", "TaskTrackerPro.Web\TaskTrackerPro.Web.csproj", "{6DDBEC14-D2BF-4406-AE7C-F51A639AFC0F}"
 EndProject
@@ -10,6 +10,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskTrackerPro.Service.Shared", "TaskTrackerPro.Service.Shared\TaskTrackerPro.Service.Shared.csproj", "{EF9FFFCB-7BEB-4075-A4B6-F40240A29CD1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskTrackerPro.Infrastructure", "TaskTrackerPro.Infrastructure\TaskTrackerPro.Infrastructure.csproj", "{FECF5BF5-305A-4A26-951F-E3D206673D50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{1AD7222D-348B-40BB-A84B-5629D771EE5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskTrackerPro.Service.UnitTest", "TaskTrackerPro.Service.UnitTest\TaskTrackerPro.Service.UnitTest.csproj", "{416F9D23-38A0-4301-A2FB-9698046AB665}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +39,20 @@ Global
 		{FECF5BF5-305A-4A26-951F-E3D206673D50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FECF5BF5-305A-4A26-951F-E3D206673D50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FECF5BF5-305A-4A26-951F-E3D206673D50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{416F9D23-38A0-4301-A2FB-9698046AB665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{416F9D23-38A0-4301-A2FB-9698046AB665}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{416F9D23-38A0-4301-A2FB-9698046AB665}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{416F9D23-38A0-4301-A2FB-9698046AB665}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6DDBEC14-D2BF-4406-AE7C-F51A639AFC0F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{E158719A-EB39-4EEE-A40C-27940C8D200A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{EF9FFFCB-7BEB-4075-A4B6-F40240A29CD1} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{FECF5BF5-305A-4A26-951F-E3D206673D50} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{416F9D23-38A0-4301-A2FB-9698046AB665} = {1AD7222D-348B-40BB-A84B-5629D771EE5E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1F794721-08B7-4F52-911E-529D6F54F386}
