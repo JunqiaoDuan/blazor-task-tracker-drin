@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using TaskTrackerPro.Service.Entities.TaskItemAggregate;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TaskTrackerPro.Infrastructure.Db.EF
@@ -22,6 +23,7 @@ namespace TaskTrackerPro.Infrastructure.Db.EF
 
         #region Tables
 
+        public DbSet<TaskItem> TaskItem { get; set; }
 
         #endregion
 

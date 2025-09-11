@@ -28,13 +28,12 @@ namespace TaskTrackerPro.Web.Configurations
 
             #region Service Repository
 
-            builder.Services.AddDbContext<DbContext, TaskTrackerProContext>((serviceProvider, options) =>
-            {
-                options.UseSqlServer(sqlConnection);
-            });
-
-            #endregion
+            builder.Services.AddDbContext<TaskTrackerProContext>(options =>
+                options.UseSqlServer(sqlConnection)
+            );
         }
+
+        #endregion
 
         #endregion
 
