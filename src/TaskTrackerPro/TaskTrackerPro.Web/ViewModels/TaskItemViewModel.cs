@@ -21,11 +21,11 @@ namespace TaskTrackerPro.Web.ViewModels
     {
         public Guid Id { get; set; }
 
-        [Required]
-        [MaxLength(100)]
+        [Required(ErrorMessage = "Title is required")]
+        [MaxLength(100, ErrorMessage = "Title must be at most 100 characters")]
         public string Title { get; set; }
 
-        [MaxLength(500)]
+        [MaxLength(500, ErrorMessage = "Description must be at most 500 characters")]
         public string Description { get; set; }
 
         [Required]

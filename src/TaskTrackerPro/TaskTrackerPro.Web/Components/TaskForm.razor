@@ -5,28 +5,28 @@
 @inject ITaskService _taskService
 
 <EditForm Model="_taskItemViewModel" OnValidSubmit="HandleValidSubmit">
+
     <DataAnnotationsValidator />
-    <ValidationSummary />
 
     <div class="mb-3">
-        <label class="form-label">Title</label>
+        <label>Title</label>
         <InputText class="form-control" @bind-Value="_taskItemViewModel.Title" />
+        <ValidationMessage For="@(() => _taskItemViewModel.Title)" />
     </div>
     <div class="mb-3">
-        <label class="form-label">Description</label>
+        <label>Description</label>
         <InputTextArea class="form-control" @bind-Value="_taskItemViewModel.Description" />
+        <ValidationMessage For="@(() => _taskItemViewModel.Description)" />
     </div>
     <div class="mb-3">
-        <label class="form-label">Priority</label>
+        <label>Priority</label>
         <InputSelect class="form-select" @bind-Value="_taskItemViewModel.TaskItemPriority">
             @foreach (var priority in Enum.GetValues<TaskItemPriority>())
             {
                 <option value="@priority">@priority</option>
             }
         </InputSelect>
+        <ValidationMessage For="@(() => _taskItemViewModel.TaskItemPriority)" />
     </div>
-    <div class="d-flex justify-content-end">
-        <button type="submit" class="btn btn-primary me-2">Save</button>
-        <button type="button" class="btn btn-secondary" @onclick="OnCancel">Cancel</button>
-    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
 </EditForm>
