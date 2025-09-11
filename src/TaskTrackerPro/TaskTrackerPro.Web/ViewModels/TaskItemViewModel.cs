@@ -29,12 +29,12 @@ namespace TaskTrackerPro.Web.ViewModels
         public string Description { get; set; }
 
         [Required]
-        public TaskItemStatus Status { get; set; } = TaskItemStatus.Pending;
+        public TaskItemStatus TaskItemStatus { get; set; }
 
         [Required]
-        public TaskItemPriority Priority { get; set; } = TaskItemPriority.Medium;
+        public TaskItemPriority TaskItemPriority { get; set; }
 
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTimeOffset? CreationDate { get; set; }
     }
 
 }

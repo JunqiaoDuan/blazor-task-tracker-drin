@@ -42,11 +42,13 @@ namespace TaskTrackerPro.Web.Components
 
         private void openAddModal()
         {
+            _editingTaskId = null;
             _showEditModal = true;
         }
 
-        private void openEditModal()
+        private void openEditModalClicked(Guid taskId)
         {
+            _editingTaskId = taskId;
             _showEditModal = true;
         }
 
@@ -61,6 +63,20 @@ namespace TaskTrackerPro.Web.Components
             await loadTaskItemsAsync();
         }
 
+        private async Task toggleCompletionClicked(Guid taskId)
+        {
+            await _taskService.ToggleCompletionAsync(taskId, TaskItemStatus.Completed);
+
+            await loadTaskItemsAsync();
+        }
+
+        private async Task openDeleteTaskClicked(Guid taskId)
+        {
+            await _taskService.DeleteAsync(taskId);
+
+            await loadTaskItemsAsync();
+        }
+
         #endregion
 
         #region Private Methods
@@ -69,7 +85,8 @@ namespace TaskTrackerPro.Web.Components
         {
             var allTasks = await _taskService.GetAllAsync();
             allTasks = allTasks
-                .OrderByDescending(t => t.CreationDate)
+                .OrderByDescending(i => i.TaskItemPriority)
+                .ThenByDescending(i => i.CreationDate)
                 .ToList();
 
             _taskItemViewModel.Records = allTasks

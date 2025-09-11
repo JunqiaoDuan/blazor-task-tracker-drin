@@ -42,31 +42,25 @@ else
                         <td>@_task.Title</td>
                         <td>@_task.Description</td>
                         <td>
-                            <span class="@getStatusBadge(_task.Status)">
-                                @_task.Status
+                            <span class="@getStatusBadge(_task.TaskItemStatus)">
+                                @_task.TaskItemStatus
                             </span>
                         </td>
                         <td>
-                            <span class="@getPriorityBadge(_task.Priority)">
-                                @_task.Priority
+                            <span class="@getPriorityBadge(_task.TaskItemPriority)">
+                                @_task.TaskItemPriority
                             </span>
                         </td>
-                        <td>@_task.CreatedAt.ToString("g")</td>
+                        <td>@_task.CreationDate?.ToString("g")</td>
                         <td>
-                            <button class="btn btn-sm btn-outline-success me-1">
-                                <i class="bi bi-check2-circle">
-                                    Toggle Complete
-                                </i>
+                            <button class="btn btn-sm btn-outline-success" @onclick="() => toggleCompletionClicked(_task.Id)">
+                                Toggle Completion
                             </button>
-                            <button class="btn btn-sm btn-outline-primary me-1" @onclick="() => openEditModal()">
-                                <i class="bi bi-pencil">
-                                    Edit
-                                </i>
+                            <button class="btn btn-sm btn-outline-primary" @onclick="() => openEditModalClicked(_task.Id)">
+                                Edit
                             </button>
-                            <button class="btn btn-sm btn-outline-danger">
-                                <i class="bi bi-trash">
-                                    Delete
-                                </i>
+                            <button class="btn btn-sm btn-outline-danger" @onclick="() => openDeleteTaskClicked(_task.Id)">
+                                Delete
                             </button>
                         </td>
                     </tr>
