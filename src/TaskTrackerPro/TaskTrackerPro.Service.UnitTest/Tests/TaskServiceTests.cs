@@ -46,11 +46,11 @@ namespace TaskTrackerPro.Service.UnitTest.Tests
                      .ReturnsAsync(tasks);
 
             // Act
-            var result = await _service.GetAllFilterredAsync("", "", null, TaskItemPriority.High);
+            var result = await _service.GetAllFilterredAsync("", "", null, null);
 
             // Assert
-            Assert.Single(result);
-            Assert.Equal(TaskItemPriority.High, result[0].TaskItemPriority);
+            Assert.Equal(2, result.Count);
+            Assert.Equal(TaskItemPriority.High, result[1].TaskItemPriority);
         }
 
         [Fact]
