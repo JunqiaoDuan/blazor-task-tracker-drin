@@ -10,7 +10,10 @@ namespace TaskTrackerPro.Web.Components
         #region Properties
 
         private TaskItemViewModel _taskItemViewModel;
-        private bool isLoading = true;
+        private bool _isLoading = true;
+
+        private bool _showEditModal = false;
+        private Guid? _editingTaskId = null;
 
         #endregion
 
@@ -30,14 +33,33 @@ namespace TaskTrackerPro.Web.Components
 
             #endregion
 
-            isLoading = false;
+            _isLoading = false;
         }
 
         #endregion
 
         #region Event
 
+        private void openAddModal()
+        {
+            _showEditModal = true;
+        }
 
+        private void openEditModal()
+        {
+            _showEditModal = true;
+        }
+
+        private void closeEditModal()
+        {
+            _showEditModal = false;
+        }
+
+        private async Task onTaskSavedAsync()
+        {
+            _showEditModal = false;
+            await loadTaskItemsAsync();
+        }
 
         #endregion
 
