@@ -11,6 +11,7 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 
 builder.AddRepositories();
+builder.AddBusinessService();
 
 var app = builder.Build();
 

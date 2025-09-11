@@ -5,6 +5,20 @@ namespace TaskTrackerPro.Web.ViewModels
 {
     public class TaskItemViewModel
     {
+        #region Filter
+
+        #endregion
+
+        #region Grid
+
+        public List<TaskItemViewModel_Record> Records = [];
+
+        #endregion
+
+    }
+
+    public class TaskItemViewModel_Record
+    {
         public Guid Id { get; set; }
 
         [Required]
@@ -22,4 +36,5 @@ namespace TaskTrackerPro.Web.ViewModels
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
+
 }

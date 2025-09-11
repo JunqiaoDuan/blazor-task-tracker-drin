@@ -23,6 +23,5 @@ namespace TaskTrackerPro.Service.Entities.TaskItemAggregate
 
         [Required]
         public TaskItemPriority TaskItemPriority { get; set; } = TaskItemPriority.Medium;
-
     }
 }
