@@ -54,7 +54,7 @@ else
                         <td>@_task.CreationDate?.ToString("g")</td>
                         <td>
                             <button class="btn btn-sm btn-outline-success" @onclick="() => toggleCompletionClicked(_task.Id)">
-                                Toggle Completion
+                                Complete
                             </button>
                             <button class="btn btn-sm btn-outline-primary" @onclick="() => openEditModalClicked(_task.Id)">
                                 Edit
@@ -80,7 +80,7 @@ else
                     <button type="button" class="btn-close" @onclick="closeEditModal"></button>
                 </div>
                 <div class="modal-body">
-                    <TaskEdit TaskItemId="_editingTaskId" OnSaved="onTaskSavedAsync" OnCancel="closeEditModal" />
+                    <TaskForm TaskItemId="_editingTaskId" OnSaved="onTaskSavedAsync" OnCancel="closeEditModal" />
                 </div>
             </div>
         </div>

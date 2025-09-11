@@ -6,7 +6,7 @@ using TaskTrackerPro.Web.ViewModels;
 
 namespace TaskTrackerPro.Web.Components
 {
-    public partial class TaskEdit : ComponentBase
+    public partial class TaskForm : ComponentBase
     {
         #region Parameters
 
